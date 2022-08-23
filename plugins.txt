@@ -20,3 +20,6 @@ workflow-aggregator:latest
 ws-cleanup:latest
 job-dsl:latest
 startup-trigger-plugin:latest
+kubernetes-cli:latest
+docker-build-publish:latest
+docker-workflow:latest
