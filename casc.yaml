@@ -1,0 +1,18 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: ${JENKINS_USER}
+         password: ${JENKINS_PASSWORD}
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "USER:Overall/Administer:admin"
+        - "GROUP:Overall/Read:authenticated"
+unclassified:
+  location:
+    url: http://${JENKINS_SERVER}:8080/
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
