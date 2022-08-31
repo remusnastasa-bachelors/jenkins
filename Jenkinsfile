@@ -32,7 +32,7 @@ pipeline {
     }
     stage('Cleanup') {
     	steps {
-        	sh "docker rmi $imagename:latest"
+        	sh "docker rmi $imagename:latest --force"
     	}
     }
   }
