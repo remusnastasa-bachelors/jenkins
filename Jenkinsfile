@@ -30,13 +30,6 @@ pipeline {
 	    	}
         }
     }
-    
-    stage('Rollout') {
-    	steps {
-        	sh 'kubectl --kubeconfig /etc/kubernetes/kubeconfig --server "https://${KUBE_SERVER}" --token="${SERVICE_ACCOUNT_TOKEN}" rollout restart deployment jenkins'
-    	}
-    }
-    
     stage('Cleanup') {
     	steps {
         	sh "docker rmi $imagename:latest"
